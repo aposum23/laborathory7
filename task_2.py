@@ -2,19 +2,14 @@ def find_sum(arr):
     lst_of_elm = []
 
     for ind, elem in enumerate(arr):
-        if float(elem) < 0:
+        if float(elem) == 0:
             lst_of_elm.append(ind)
         if len(lst_of_elm) >= 2:
             break
 
-    sum = 0
+    srz = arr[lst_of_elm[0]:lst_of_elm[1]]
 
-    i = lst_of_elm[0] + 1
-    while i < lst_of_elm[1]:
-        sum = sum + float(arr[i])
-        i += 1
-
-    return sum
+    return sum(map(float, srz))
 
 
 def find_maximal(arr):
@@ -29,11 +24,18 @@ def find_maximal(arr):
     return max
 
 
+def find_maximal2(arr):
+    abs_lst = map(abs, arr)
+    return max(abs_lst)
+
+
 lst = input('Write list: ')
 lst = lst.split()
 
 sum_of_el = find_sum(lst)
-max_el = find_maximal(lst)
+max_el_heand = find_maximal(lst)
+max_el = find_maximal2(lst)
 
+print(f'Maximal element heandmade: {max_el_heand}')
 print(f'Maximal element: {max_el}')
 print(f'Sum of elements: {sum_of_el}')
