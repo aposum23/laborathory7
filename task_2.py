@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 def find_sum(arr):
     lst_of_elm = []
 
