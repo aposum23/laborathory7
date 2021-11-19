@@ -12,7 +12,7 @@ def find_sum(arr):
     return sum(map(float, srz))
 
 
-def find_maximal(arr):
+def find_maximal_heand(arr):
     max = float(arr[0])
 
     for el in arr:
@@ -24,18 +24,19 @@ def find_maximal(arr):
     return max
 
 
-def find_maximal2(arr):
+def find_maximal(arr):
     abs_lst = map(abs, arr)
     return max(abs_lst)
 
 
-lst = input('Write list: ')
-lst = lst.split()
+if __name__ == '__main__':
+    lst = input('Write list: ')
+    lst = lst.split()
 
-sum_of_el = find_sum(lst)
-max_el_heand = find_maximal(lst)
-max_el = find_maximal2(lst)
+    sum_of_el = find_sum(lst)
+    max_el_heand = find_maximal_heand(lst)
+    max_el = find_maximal(lst)
 
-print(f'Maximal element heandmade: {max_el_heand}')
-print(f'Maximal element: {max_el}')
-print(f'Sum of elements: {sum_of_el}')
+    print(f'Maximal element heandmade: {max_el_heand}')
+    print(f'Maximal element: {max_el}')
+    print(f'Sum of elements: {sum_of_el}')
